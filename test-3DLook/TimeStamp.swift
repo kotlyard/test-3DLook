@@ -8,13 +8,31 @@
 
 import Foundation
 
+
+enum TimerState {
+  case initial
+  case running
+  case paused
+}
+
 struct TimeStamp {
   let stamp: TimeInterval = 0
   let note: String = ""
 }
 
-
-final class TimerService {
-  static let shared = TimerService()
-  private init() {}
+///
+@propertyWrapper struct UserDefaultsBacked<Value> {
+  let key: String
+  let defaultValue: Value
+  var storage: UserDefaults = .standard
+  
+  var wrappedValue: Value {
+    get {
+      let value = storage.value(forKey: key) as? Value
+      return value ?? defaultValue
+    }
+    set {
+      storage.setValue(newValue, forKey: key)
+    }
+  }
 }
