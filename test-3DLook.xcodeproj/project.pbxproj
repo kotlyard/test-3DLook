@@ -17,6 +17,7 @@
 		FB88BA6724E141020064B89E /* TimeStampTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB88BA6524E141020064B89E /* TimeStampTableViewCell.xib */; };
 		FB88BA6B24E145D10064B89E /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB88BA6A24E145D10064B89E /* TimeStamp.swift */; };
 		FB88BA6D24E195780064B89E /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB88BA6C24E195780064B89E /* TimerService.swift */; };
+		FBE00D8224E1A32C00FB9487 /* UserDefaultBacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE00D8124E1A32C00FB9487 /* UserDefaultBacked.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FB88BA6524E141020064B89E /* TimeStampTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeStampTableViewCell.xib; path = ../../TimeStampTableViewCell.xib; sourceTree = "<group>"; };
 		FB88BA6A24E145D10064B89E /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
 		FB88BA6C24E195780064B89E /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		FBE00D8124E1A32C00FB9487 /* UserDefaultBacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultBacked.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				FB88BA6A24E145D10064B89E /* TimeStamp.swift */,
+				FBE00D8124E1A32C00FB9487 /* UserDefaultBacked.swift */,
 				FB88BA6C24E195780064B89E /* TimerService.swift */,
 			);
 			path = Models;
@@ -196,6 +199,7 @@
 				FB88BA5124E131EC0064B89E /* AppDelegate.swift in Sources */,
 				FB88BA6D24E195780064B89E /* TimerService.swift in Sources */,
 				FB88BA6624E141020064B89E /* TimeStampTableViewCell.swift in Sources */,
+				FBE00D8224E1A32C00FB9487 /* UserDefaultBacked.swift in Sources */,
 				FB88BA5324E131EC0064B89E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

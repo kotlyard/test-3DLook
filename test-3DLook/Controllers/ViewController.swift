@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-  
   @IBOutlet weak var headerView: UIView!
   @IBOutlet weak var tableView: UITableView!
   
@@ -17,6 +16,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var secondsLabel: UILabel!
   @IBOutlet weak var miliSecondsLabel: UILabel!
   
+  /// The service that handles all timer stuff
   private let timerService = TimerService()
   
   override func viewDidLoad() {
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     timerService.delegate = self
   }
   
+  // MARK: - Gestures
   private func createGestureRecognizers() {
     let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
     let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
     doubleTap.numberOfTapsRequired = 2
     
     singleTap.require(toFail: doubleTap)
-    
+
     headerView.addGestureRecognizer(singleTap)
     headerView.addGestureRecognizer(doubleTap)
   }
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
     showAlert()
   }
   
+  // MARK: - Alert
   private func showAlert() {
     let alertVC = UIAlertController(title: "Enter a note to your timestamp",
                                     message: nil,
@@ -98,12 +100,6 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: TimerServiceDelegate {
-  func timeUpdated(_ time: TimeInterval) {
-    updateLabels(with: time)
-  }
-}
-
 // MARK: - TableView
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,4 +119,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     return tableView.frame.height / 6
   }
   
+}
+
+// MARK: - TimerServiceDelegate
+extension ViewController: TimerServiceDelegate {
+  func timeUpdated(_ time: TimeInterval) {
+    updateLabels(with: time)
+  }
 }
