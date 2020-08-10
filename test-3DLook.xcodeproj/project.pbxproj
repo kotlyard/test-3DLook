@@ -16,6 +16,7 @@
 		FB88BA6624E141020064B89E /* TimeStampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB88BA6424E141020064B89E /* TimeStampTableViewCell.swift */; };
 		FB88BA6724E141020064B89E /* TimeStampTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB88BA6524E141020064B89E /* TimeStampTableViewCell.xib */; };
 		FB88BA6B24E145D10064B89E /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB88BA6A24E145D10064B89E /* TimeStamp.swift */; };
+		FB88BA6D24E195780064B89E /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB88BA6C24E195780064B89E /* TimerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB88BA6424E141020064B89E /* TimeStampTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeStampTableViewCell.swift; path = ../../TimeStampTableViewCell.swift; sourceTree = "<group>"; };
 		FB88BA6524E141020064B89E /* TimeStampTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeStampTableViewCell.xib; path = ../../TimeStampTableViewCell.xib; sourceTree = "<group>"; };
 		FB88BA6A24E145D10064B89E /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
+		FB88BA6C24E195780064B89E /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,8 @@
 			children = (
 				FB88BA5024E131EC0064B89E /* AppDelegate.swift */,
 				FB88BA5224E131EC0064B89E /* SceneDelegate.swift */,
-				FB88BA6A24E145D10064B89E /* TimeStamp.swift */,
-				FB88BA5424E131EC0064B89E /* ViewController.swift */,
+				FB88BA6E24E1957E0064B89E /* Models */,
+				FB88BA6F24E1958D0064B89E /* Controllers */,
 				FB88BA5624E131EC0064B89E /* Main.storyboard */,
 				FB88BA6824E141080064B89E /* Views */,
 				FB88BA5924E131EE0064B89E /* Assets.xcassets */,
@@ -90,6 +92,23 @@
 				FB88BA6524E141020064B89E /* TimeStampTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB88BA6E24E1957E0064B89E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB88BA6A24E145D10064B89E /* TimeStamp.swift */,
+				FB88BA6C24E195780064B89E /* TimerService.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB88BA6F24E1958D0064B89E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB88BA5424E131EC0064B89E /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +186,7 @@
 				FB88BA5524E131EC0064B89E /* ViewController.swift in Sources */,
 				FB88BA6B24E145D10064B89E /* TimeStamp.swift in Sources */,
 				FB88BA5124E131EC0064B89E /* AppDelegate.swift in Sources */,
+				FB88BA6D24E195780064B89E /* TimerService.swift in Sources */,
 				FB88BA6624E141020064B89E /* TimeStampTableViewCell.swift in Sources */,
 				FB88BA5324E131EC0064B89E /* SceneDelegate.swift in Sources */,
 			);
