@@ -50,7 +50,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.53333333329999999" green="0.96470588239999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="nAh-uh-N8o" firstAttribute="centerX" secondItem="0rj-Sq-2Ja" secondAttribute="centerX" id="XIa-dP-cRP"/>
@@ -60,13 +60,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0rj-Sq-2Ja" secondAttribute="trailing" id="19l-x6-xuR"/>
+                            <constraint firstAttribute="trailing" secondItem="0rj-Sq-2Ja" secondAttribute="trailing" id="19l-x6-xuR"/>
                             <constraint firstItem="Jzf-O1-3Tp" firstAttribute="top" secondItem="0rj-Sq-2Ja" secondAttribute="bottom" id="87u-M3-eF0"/>
                             <constraint firstItem="0rj-Sq-2Ja" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8OM-l3-3yc"/>
                             <constraint firstAttribute="bottom" secondItem="Jzf-O1-3Tp" secondAttribute="bottom" id="Ea3-Yr-1tz"/>
-                            <constraint firstItem="Jzf-O1-3Tp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FrS-2o-FZw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jzf-O1-3Tp" secondAttribute="trailing" id="gLK-Ob-bLS"/>
-                            <constraint firstItem="0rj-Sq-2Ja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p7p-dC-6Wx"/>
+                            <constraint firstItem="Jzf-O1-3Tp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FrS-2o-FZw"/>
+                            <constraint firstAttribute="trailing" secondItem="Jzf-O1-3Tp" secondAttribute="trailing" id="gLK-Ob-bLS"/>
+                            <constraint firstItem="0rj-Sq-2Ja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p7p-dC-6Wx"/>
                             <constraint firstItem="0rj-Sq-2Ja" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="vUj-w2-3wn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

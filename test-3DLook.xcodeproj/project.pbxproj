@@ -67,11 +67,10 @@
 				FB88BA5024E131EC0064B89E /* AppDelegate.swift */,
 				FB88BA5224E131EC0064B89E /* SceneDelegate.swift */,
 				FB88BA6E24E1957E0064B89E /* Models */,
-				FB88BA6F24E1958D0064B89E /* Controllers */,
-				FB88BA5624E131EC0064B89E /* Main.storyboard */,
 				FB88BA6824E141080064B89E /* Views */,
+				FB88BA6F24E1958D0064B89E /* Controllers */,
+				FBE00D8024E1A0C500FB9487 /* Scenes */,
 				FB88BA5924E131EE0064B89E /* Assets.xcassets */,
-				FB88BA5B24E131EE0064B89E /* LaunchScreen.storyboard */,
 				FB88BA5E24E131EE0064B89E /* Info.plist */,
 			);
 			path = "test-3DLook";
@@ -109,6 +108,15 @@
 				FB88BA5424E131EC0064B89E /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FBE00D8024E1A0C500FB9487 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FB88BA5624E131EC0064B89E /* Main.storyboard */,
+				FB88BA5B24E131EE0064B89E /* LaunchScreen.storyboard */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

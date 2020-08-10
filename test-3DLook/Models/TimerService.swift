@@ -21,24 +21,24 @@ class TimerService {
     case running
     case paused
   }
-  
+
   func startTimer() {
     state = .running
     startTime = Date().timeIntervalSinceReferenceDate - time
     
     createTimer()
   }
-  
+
   func pauseTimer() {
     state = .paused
     
     timer?.invalidate()
   }
-  
+
   func stopTimer() {
     pauseTimer()
   }
-  
+
   func resetTimer() {
     state = .initial
     
