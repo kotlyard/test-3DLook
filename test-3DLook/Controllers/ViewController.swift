@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     tableView.register(cellNib, forCellReuseIdentifier: "TimeStampTableViewCell")
     
     createGestureRecognizers()
-    
+
     timerService.delegate = self
   }
   

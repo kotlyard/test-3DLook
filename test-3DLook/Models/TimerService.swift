@@ -37,7 +37,6 @@ class TimerService {
   
   func stopTimer() {
     pauseTimer()
-    
   }
   
   func resetTimer() {
@@ -52,10 +51,12 @@ class TimerService {
   
   var state: State = .initial
   
+  /// Array of Timestamps user made by stopping timer
   @UserDefaultsBacked(key: "timeStamps", defaultValue: [])
   var timeStamps: [TimeStamp]
   
   
+  /// Time interval for firing the timer
   private var timeInterval = 0.1
   
   
@@ -68,11 +69,10 @@ class TimerService {
     }
   }
   
-  /// Returns strring representing given integer with 2 leading zeroes if possible
+  /// Returns string representing given integer with 2 leading zeroes if possible
   func formatTimeInterval(timeUnits: Int) -> String {
     String(format: "%02d", timeUnits)
   }
-  
   
   private func createTimer() {
     timer = Timer.scheduledTimer(timeInterval: timeInterval,
@@ -80,6 +80,7 @@ class TimerService {
                                  selector: #selector(updateTime),
                                  userInfo: nil,
                                  repeats: true)
+    RunLoop.main.add(timer!, forMode: .common)
   }
   
   @objc private func updateTime() {
