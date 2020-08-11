@@ -48,7 +48,7 @@ class ViewController: UIViewController {
   }
   
   @objc private func singleTapped() {
-    let generator = UIImpactFeedbackGenerator(style: .heavy)
+    let generator = UIImpactFeedbackGenerator(style: .soft)
     generator.impactOccurred()
     
     switch timerService.state {
@@ -60,6 +60,9 @@ class ViewController: UIViewController {
   }
   
   @objc private func doubleTapped() {
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
+    generator.impactOccurred()
+
     timerService.stopTimer()
     
     showAlert()
