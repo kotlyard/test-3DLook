@@ -6,8 +6,7 @@
 //  Copyright © 2020 Денис Котляр. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 protocol TimerServiceDelegate: class {
   func timeUpdated(_ time: TimeInterval)
@@ -20,6 +19,46 @@ class TimerService {
     case initial
     case running
     case paused
+  }
+
+  init() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(applicationWillTerminate),
+                                           name: UIApplication.willTerminateNotification,
+                                           object: nil)
+  }
+  
+  @objc private func applicationWillTerminate() {
+    // Save timer value
+    UserDefaults.standard.set(time, forKey: "previousTimerValue")
+    // And state
+    UserDefaults.standard.set(state == .running, forKey: "wasRunning")
+    
+    if state == .running {
+      // Saving termination time
+      let currerntAbsoluteTime = CFAbsoluteTimeGetCurrent()
+
+      UserDefaults.standard.set(currerntAbsoluteTime, forKey: "terminationAbsoluteTime")
+    }
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+
+  func continueIfNeeded() {
+    // Load previous value
+    time = UserDefaults.standard.double(forKey: "previousTimerValue")
+
+    // Calculate new value if timer should have run all the time
+    if UserDefaults.standard.bool(forKey: "wasRunning") {
+      let timePassed = UserDefaults.standard.double(forKey: "terminationAbsoluteTime")
+      
+      time += CFAbsoluteTimeGetCurrent() - timePassed
+      
+      // Continue counting
+      startTimer()
+    }
   }
 
   func startTimer() {
@@ -59,11 +98,11 @@ class TimerService {
   /// Time interval for firing the timer
   private var timeInterval = 0.1
   
-  
   var startTime: TimeInterval!
   
   /// Time passed since start time
-  var time: TimeInterval = 0 {
+  @UserDefaultsBacked(key: "time", defaultValue: 0)
+  var time: TimeInterval {
     didSet {
       delegate?.timeUpdated(time)
     }

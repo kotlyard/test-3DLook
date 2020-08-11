@@ -15,9 +15,9 @@ class ViewController: UIViewController {
   @IBOutlet weak var minutesLabel: UILabel!
   @IBOutlet weak var secondsLabel: UILabel!
   @IBOutlet weak var miliSecondsLabel: UILabel!
-  
+
   /// The service that handles all timer stuff
-  private let timerService = TimerService()
+  let timerService = TimerService()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,8 +28,11 @@ class ViewController: UIViewController {
     createGestureRecognizers()
 
     timerService.delegate = self
+    
+    updateLabels(with: timerService.time)
+    timerService.continueIfNeeded()
   }
-  
+
   // MARK: - Gestures
   private func createGestureRecognizers() {
     let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
@@ -93,9 +96,9 @@ class ViewController: UIViewController {
   
   /// Updates time labels with time variable in appropriate format
   private func updateLabels(with time: TimeInterval) {
-    minutesLabel.text =  timerService.formatTimeInterval(timeUnits: Int(timerService.time / 3600 * 100)) + " : "
+    minutesLabel.text =  timerService.formatTimeInterval(timeUnits: Int(timerService.time / 60)) + " :"
     secondsLabel.text = timerService.formatTimeInterval(timeUnits: Int(timerService.time.truncatingRemainder(dividingBy: 60))) + " :"
-    miliSecondsLabel.text = timerService.formatTimeInterval(timeUnits: Int(timerService.time.truncatingRemainder(dividingBy: 1) * 10))
+    miliSecondsLabel.text = "\(Int(timerService.time.truncatingRemainder(dividingBy: 1) * 10))0"
   }
   
 }
