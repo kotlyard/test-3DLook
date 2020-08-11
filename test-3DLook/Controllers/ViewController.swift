@@ -29,8 +29,8 @@ class ViewController: UIViewController {
 
     timerService.delegate = self
     
-    updateLabels(with: timerService.time)
     timerService.continueIfNeeded()
+    updateLabels(with: timerService.time)
   }
 
   // MARK: - Gestures
@@ -96,8 +96,8 @@ class ViewController: UIViewController {
   
   /// Updates time labels with time variable in appropriate format
   private func updateLabels(with time: TimeInterval) {
-    minutesLabel.text =  timerService.formatTimeInterval(timeUnits: Int(timerService.time / 60)) + " :"
-    secondsLabel.text = timerService.formatTimeInterval(timeUnits: Int(timerService.time.truncatingRemainder(dividingBy: 60))) + " :"
+    minutesLabel.text =  timerService.formatTimeInterval(timeUnits: Int(timerService.time / 60)) + ":"
+    secondsLabel.text = timerService.formatTimeInterval(timeUnits: Int(timerService.time.truncatingRemainder(dividingBy: 60))) + ":"
     miliSecondsLabel.text = "\(Int(timerService.time.truncatingRemainder(dividingBy: 1) * 10))0"
   }
   

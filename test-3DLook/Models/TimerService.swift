@@ -22,18 +22,15 @@ class TimerService {
   }
 
   init() {
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(applicationWillTerminate),
-                                           name: UIApplication.willTerminateNotification,
-                                           object: nil)
+    NotificationCenter
+      .default
+      .addObserver(self,
+                   selector: #selector(applicationWillTerminate),
+                   name: UIApplication.willTerminateNotification,
+                   object: nil)
   }
   
   @objc private func applicationWillTerminate() {
-    // Save timer value
-    UserDefaults.standard.set(time, forKey: "previousTimerValue")
-    // And state
-    UserDefaults.standard.set(state == .running, forKey: "wasRunning")
-    
     if state == .running {
       // Saving termination time
       let currerntAbsoluteTime = CFAbsoluteTimeGetCurrent()
@@ -47,9 +44,6 @@ class TimerService {
   }
 
   func continueIfNeeded() {
-    // Load previous value
-    time = UserDefaults.standard.double(forKey: "previousTimerValue")
-
     // Calculate new value if timer should have run all the time
     if UserDefaults.standard.bool(forKey: "wasRunning") {
       let timePassed = UserDefaults.standard.double(forKey: "terminationAbsoluteTime")
@@ -88,7 +82,11 @@ class TimerService {
   // MARK: - Timer stuff
   var timer: Timer?
   
-  var state: State = .initial
+  var state: State = .initial {
+    didSet {
+      UserDefaults.standard.set(state == .running, forKey: "wasRunning")
+    }
+  }
   
   /// Array of Timestamps user made by stopping timer
   @UserDefaultsBacked(key: "timeStamps", defaultValue: [])
